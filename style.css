@@ -266,20 +266,21 @@ header {
 }
 
 /* DARK MODE */
-body.dark {
+.dark body {
   background: var(--bg-dark);
   color: var(--text-dark);
 }
 
-body.dark header,
-body.dark .section {
+.dark body header,
+.dark body .section {
   background: var(--card-dark);
 }
 
-body.dark .tool-card,
-body.dark .project-card {
+dark.body .tool-card,
+dark.body .project-card {
   background: #262626;
 }
+
 
 
 
