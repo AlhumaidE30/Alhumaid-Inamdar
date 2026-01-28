@@ -280,6 +280,23 @@ dark.body .tool-card,
 dark.body .project-card {
   background: #262626;
 }
+/* ===== DARK MODE CARD FIXES ===== */
+
+/* Tool experience cards */
+.dark .tool-card {
+  background: #262626;
+}
+
+/* Project cards */
+.dark .project-card {
+  background: #262626;
+}
+
+/* Project hover overlay remains readable */
+.dark .project-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
 
 
 
