@@ -48,3 +48,28 @@ function copySiteLink() {
     msg.textContent = "Email address copied"; // reset for email
   }, 2000);
 }
+
+// ===== ACTIVE NAV LINK HANDLER =====
+(function setActiveNav() {
+  const links = document.querySelectorAll(".nav-links a");
+  const currentPath = window.location.pathname;
+  const currentHash = window.location.hash;
+
+  links.forEach(link => {
+    const linkHref = link.getAttribute("href");
+
+    // Match normal pages
+    if (
+      (linkHref === "index.html" && (currentPath.endsWith("/") || currentPath.endsWith("index.html")) && !currentHash) ||
+      (linkHref === "projects.html" && currentPath.endsWith("projects.html")) ||
+      (linkHref === "about.html" && currentPath.endsWith("about.html"))
+    ) {
+      link.classList.add("active");
+    }
+
+    // Match Contacts (index.html#contacts)
+    if (linkHref.includes("#contacts") && currentHash === "#contacts") {
+      link.classList.add("active");
+    }
+  });
+})();
