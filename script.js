@@ -23,3 +23,4 @@ function copyEmail() {
   msg.classList.add("show");
   setTimeout(() => msg.classList.remove("show"), 2000);
 }
+
