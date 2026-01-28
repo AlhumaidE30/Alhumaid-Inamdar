@@ -280,3 +280,46 @@ body.dark .tool-card,
 body.dark .project-card {
   background: #262626;
 }
+
+/* PROJECT CARD HOVER EFFECT */
+.project-card {
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 22px 44px rgba(0,0,0,0.2);
+}
+
+/* PROJECT TITLE EMPHASIS */
+.project-card-content {
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-card-content {
+  color: var(--accent);
+}
+
+/* ONGOING PROJECT BADGE */
+.project-status {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--accent);
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* SHOW ONLY ON HOVER */
+.project-card.ongoing:hover .project-status {
+  opacity: 1;
+  transform: translateY(0);
+}
