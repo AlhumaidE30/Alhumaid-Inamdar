@@ -359,6 +359,57 @@ dark.body .project-card {
 }
 
 
+/* ===== PROJECT CARD JITTER FIX ===== */
+
+/* Lock the grid item size */
+.project-card {
+  overflow: visible;
+}
+
+/* Inner wrapper handles transform */
+.project-inner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  will-change: transform;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover effect applies ONLY to inner wrapper */
+.project-card:hover .project-inner {
+  transform: scale(1.07);
+  box-shadow: 0 26px 52px rgba(0,0,0,0.28);
+}
+
+/* Ongoing project glow */
+.project-card.ongoing:hover .project-inner {
+  box-shadow: 0 30px 60px rgba(37, 99, 235, 0.45);
+}
+
+/* Prevent overlay from stealing hover */
+.project-overlay {
+  pointer-events: none;
+}
+
+/* Keep overlay stable */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show overlay cleanly */
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
 
 
 
