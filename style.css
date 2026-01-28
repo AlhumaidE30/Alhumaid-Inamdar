@@ -16,10 +16,9 @@ body {
   font-family: 'Inter', sans-serif;
   background: var(--bg-light);
   color: var(--text-light);
-  transition: background 0.5s ease, color 0.5s ease;
+  transition: background 0.4s, color 0.4s;
 }
 
-/* PAGE ANIMATION */
 .page {
   animation: fadeIn 1.6s ease;
 }
@@ -108,11 +107,6 @@ header {
   background: none;
   cursor: pointer;
   border-radius: 6px;
-  transition: transform 0.25s;
-}
-
-#themeToggle:hover {
-  transform: scale(1.15);
 }
 
 #modeLabel {
@@ -176,7 +170,7 @@ header {
   object-fit: contain;
 }
 
-/* ===== PROJECT CARDS (NEW HOVER EFFECT) ===== */
+/* PROJECTS (ISOLATED — DOES NOT AFFECT HOME/ABOUT) */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -185,51 +179,46 @@ header {
 
 .project-card {
   position: relative;
-  overflow: hidden;
   border-radius: 16px;
+  overflow: hidden;
   background: #f7f7f7;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 22px 44px rgba(0,0,0,0.22);
 }
 
 .project-card img {
   width: 100%;
-  height: 180px;
+  height: 170px;
   object-fit: cover;
 }
 
-.project-card:hover {
-  transform: scale(1.06);
-  box-shadow: 0 24px 48px rgba(0,0,0,0.25);
-}
-
-/* HOVER OVERLAY */
-.project-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.project-title {
+  padding: 14px;
   font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.35s ease;
 }
 
-.project-card:hover .project-overlay {
-  opacity: 1;
-}
-
-/* ONGOING BADGE */
-.badge {
+/* ONLY FOR ONGOING PROJECT */
+.ongoing::after {
+  content: "Ongoing project";
   position: absolute;
   top: 14px;
-  left: 14px;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--accent);
   color: white;
-  font-size: 0.7rem;
-  padding: 4px 8px;
+  font-size: 0.75rem;
+  padding: 6px 10px;
   border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.ongoing:hover::after {
+  opacity: 1;
 }
 
 /* CONTACTS */
