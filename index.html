@@ -1,31 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home</title>
+  <title>Alhumaid Inamdar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <div>
+  <div class="brand-area">
     <div class="brand">ALHUMAID</div>
-    <div class="nav">
+    <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
       <a href="about.html">About</a>
     </div>
   </div>
 
-  <div class="theme-toggle">
-    <span id="themeToggle">🌙</span>
-    <div id="modeLabel">Light mode</div>
+  <div class="header-actions">
+    <a href="resume.pdf" class="btn" download>Resume</a>
+    <div class="theme-toggle">
+      <button id="themeToggle">🌙</button>
+      <span id="modeLabel">Light mode</span>
+    </div>
   </div>
 </header>
 
 <div class="page">
-  <h1>Home</h1>
-  <p>This is the home page.</p>
+
+<section class="section profile">
+  <img src="images/profile.jpg">
+  <div>
+    <h1>Alhumaid Inamdar</h1>
+    <p>Mechanical Engineering Diploma student focused on CAD modeling, mechanical design, and practical engineering workflows.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Overview</h2>
+
+  <h3>Tools & Experience</h3>
+  <div class="tools-grid">
+    <div class="tool-card"><img src="images/tools/solidworks.png"><div>SOLIDWORKS</div></div>
+    <div class="tool-card"><img src="images/tools/nx.png"><div>NX CAD</div></div>
+    <div class="tool-card"><img src="images/tools/blender.png"><div>Blender</div></div>
+    <div class="tool-card"><img src="images/tools/ansys.png"><div>ANSYS</div></div>
+  </div>
+
+  <h3>Education</h3>
+  <p>Diploma in Mechanical Engineering – Expected 2026</p>
+  <p>PUC (Science), St. Paul’s PU College – 2024</p>
+</section>
+
+<section class="section">
+  <h2>Contacts</h2>
+  <div class="contacts">
+    <a onclick="copyEmail()"><i class="fa-solid fa-envelope"></i><span>Email</span></a>
+    <a href="https://www.linkedin.com/in/alhumaid-inamdar-b01955284/" target="_blank"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+    <a href="https://github.com/AlhumaidE30" target="_blank"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
+    <a href="https://grabcad.com/alhumaid.inamdar-1" target="_blank"><i class="fa-solid fa-cube"></i><span>GrabCAD</span></a>
+    <a href="https://www.instructables.com/member/alhumaidinamdar/" target="_blank"><i class="fa-solid fa-screwdriver-wrench"></i><span>Instructables</span></a>
+    <a href="https://www.cadcrowd.com/profile/191729-alhumaid" target="_blank"><i class="fa-solid fa-diagram-project"></i><span>CADCrowd</span></a>
+  </div>
+</section>
+
 </div>
+
+<div id="copyMsg" class="copy-msg">Email address copied</div>
 
 <script src="script.js"></script>
 </body>
