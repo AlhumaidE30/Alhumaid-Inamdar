@@ -27,13 +27,19 @@
     </div>
   </div>
 
-  <div class="header-actions">
-    <a href="resume.pdf" class="btn" download>Resume</a>
-    <div class="theme-toggle">
-      <button id="themeToggle">🌙</button>
-      <span id="modeLabel">Light mode</span>
-    </div>
+<div class="header-actions">
+  <a href="resume.pdf" class="btn" download>Resume</a>
+
+  <button class="icon-btn" onclick="copySiteLink()" aria-label="Share site">
+    <i class="fa-solid fa-share-nodes"></i>
+  </button>
+
+  <div class="theme-toggle">
+    <button id="themeToggle">🌙</button>
+    <span id="modeLabel">Light mode</span>
   </div>
+</div>
+
 </header>
 
 <div class="page">
@@ -74,6 +80,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
