@@ -33,3 +33,18 @@ function copyEmail() {
   setTimeout(() => msg.classList.remove("show"), 2000);
 }
 
+
+// Copy site link (Share button)
+function copySiteLink() {
+  const url = window.location.origin;
+  navigator.clipboard.writeText(url);
+
+  const msg = document.getElementById("copyMsg");
+  msg.textContent = "Link copied";
+  msg.classList.add("show");
+
+  setTimeout(() => {
+    msg.classList.remove("show");
+    msg.textContent = "Email address copied"; // reset for email
+  }, 2000);
+}
