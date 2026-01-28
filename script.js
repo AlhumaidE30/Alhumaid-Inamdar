@@ -49,27 +49,34 @@ function copySiteLink() {
   }, 2000);
 }
 
-// ===== ACTIVE NAV LINK HANDLER =====
+// ===== ACTIVE NAV LINK HANDLER (HOME STAYS ACTIVE FOR CONTACTS) =====
 (function setActiveNav() {
   const links = document.querySelectorAll(".nav-links a");
-  const currentPath = window.location.pathname;
-  const currentHash = window.location.hash;
+  const path = window.location.pathname;
+  const isHome =
+    path.endsWith("/") || path.endsWith("index.html");
 
   links.forEach(link => {
-    const linkHref = link.getAttribute("href");
+    const href = link.getAttribute("href");
 
-    // Match normal pages
-    if (
-      (linkHref === "index.html" && (currentPath.endsWith("/") || currentPath.endsWith("index.html")) && !currentHash) ||
-      (linkHref === "projects.html" && currentPath.endsWith("projects.html")) ||
-      (linkHref === "about.html" && currentPath.endsWith("about.html"))
-    ) {
+    // Clear any existing active state
+    link.classList.remove("active");
+
+    // Home page (even when #contacts is used)
+    if (isHome && href === "index.html") {
       link.classList.add("active");
     }
 
-    // Match Contacts (index.html#contacts)
-    if (linkHref.includes("#contacts") && currentHash === "#contacts") {
+    // Projects page
+    if (path.endsWith("projects.html") && href === "projects.html") {
+      link.classList.add("active");
+    }
+
+    // About page
+    if (path.endsWith("about.html") && href === "about.html") {
       link.classList.add("active");
     }
   });
 })();
+
+
