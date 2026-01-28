@@ -19,14 +19,14 @@ body {
   transition: background 0.5s ease, color 0.5s ease;
 }
 
-/* PAGE ANIMATION */
+/* CONSISTENT PAGE ANIMATION (ALL PAGES) */
 .page {
   animation: fadeIn 1.6s ease;
 }
 
 @keyframes fadeIn {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
 
 /* HEADER */
@@ -127,6 +127,7 @@ header {
   border-radius: 6px;
   white-space: nowrap;
   opacity: 0;
+  pointer-events: none;
 }
 
 .theme-toggle:hover #modeLabel {
@@ -151,11 +152,20 @@ header {
   align-items: center;
 }
 
-/* TOOLS */
+.profile img {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+}
+
+/* TOOLS — FIXED ICONS */
 .tools-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 24px;
+  margin-top: 26px;
 }
 
 .tool-card {
@@ -168,15 +178,21 @@ header {
   justify-content: center;
   gap: 14px;
   font-weight: 600;
+  transition: transform 0.35s, box-shadow 0.35s;
 }
 
 .tool-card img {
   width: 56px;
   height: 56px;
-  object-fit: contain;
+  object-fit: contain; /* THIS FIXES SQUEEZING */
 }
 
-/* ===== PROJECT CARDS (NEW HOVER EFFECT) ===== */
+.tool-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+/* PROJECTS */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -184,52 +200,19 @@ header {
 }
 
 .project-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
   background: #f7f7f7;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border-radius: 14px;
+  overflow: hidden;
 }
 
 .project-card img {
   width: 100%;
-  height: 180px;
+  height: 170px;
   object-fit: cover;
 }
 
-.project-card:hover {
-  transform: scale(1.06);
-  box-shadow: 0 24px 48px rgba(0,0,0,0.25);
-}
-
-/* HOVER OVERLAY */
-.project-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-.project-card:hover .project-overlay {
-  opacity: 1;
-}
-
-/* ONGOING BADGE */
-.badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  background: var(--accent);
-  color: white;
-  font-size: 0.7rem;
-  padding: 4px 8px;
-  border-radius: 6px;
+.project-card-content {
+  padding: 20px;
 }
 
 /* CONTACTS */
@@ -242,6 +225,11 @@ header {
   position: relative;
   font-size: 24px;
   color: var(--accent);
+  transition: transform 0.3s;
+}
+
+.contacts a:hover {
+  transform: scale(1.25);
 }
 
 .contacts span {
@@ -288,7 +276,7 @@ body.dark .section {
   background: var(--card-dark);
 }
 
-body.dark .project-card,
-body.dark .tool-card {
+body.dark .tool-card,
+body.dark .project-card {
   background: #262626;
 }
