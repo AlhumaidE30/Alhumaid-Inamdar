@@ -7,7 +7,24 @@
 </head>
 <body>
 
-<header>…(same header as before)…</header>
+<header>
+  <div class="brand-area">
+    <div class="brand">ALHUMAID</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+
+  <div class="header-actions">
+    <a href="resume.pdf" class="btn" download>Resume</a>
+    <div class="theme-toggle">
+      <button id="themeToggle">🌙</button>
+      <span id="modeLabel">Light mode</span>
+    </div>
+  </div>
+</header>
 
 <div class="page">
 
@@ -24,21 +41,33 @@
 
   <h3>Tools & Experience</h3>
   <div class="tools-grid">
-    <div class="tool-card"><img src="images/tools/solidworks.png">SOLIDWORKS</div>
-    <div class="tool-card"><img src="images/tools/nx.png">NX CAD</div>
-    <div class="tool-card"><img src="images/tools/blender.png">Blender</div>
-    <div class="tool-card"><img src="images/tools/ansys.png">ANSYS</div>
+    <div class="tool-card"><img src="images/tools/solidworks.png"><div>SOLIDWORKS</div></div>
+    <div class="tool-card"><img src="images/tools/nx.png"><div>NX CAD</div></div>
+    <div class="tool-card"><img src="images/tools/blender.png"><div>Blender</div></div>
+    <div class="tool-card"><img src="images/tools/ansys.png"><div>ANSYS</div></div>
   </div>
+
+  <h3>Education</h3>
+  <p>Diploma in Mechanical Engineering – Expected 2026</p>
+  <p>PUC (Science), St. Paul’s PU College – 2024</p>
 </section>
 
 <section class="section">
   <h2>Contacts</h2>
-  <div class="contacts">…same 6 icons…</div>
+  <div class="contacts">
+    <a onclick="copyEmail()"><i class="fa-solid fa-envelope"></i><span>Email</span></a>
+    <a href="https://www.linkedin.com/in/alhumaid-inamdar-b01955284/" target="_blank"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+    <a href="https://github.com/AlhumaidE30" target="_blank"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
+    <a href="https://grabcad.com/alhumaid.inamdar-1" target="_blank"><i class="fa-solid fa-cube"></i><span>GrabCAD</span></a>
+    <a href="https://www.instructables.com/member/alhumaidinamdar/" target="_blank"><i class="fa-solid fa-screwdriver-wrench"></i><span>Instructables</span></a>
+    <a href="https://www.cadcrowd.com/profile/191729-alhumaid" target="_blank"><i class="fa-solid fa-diagram-project"></i><span>CADCrowd</span></a>
+  </div>
 </section>
 
 </div>
 
 <div id="copyMsg" class="copy-msg">Email address copied</div>
+
 <script src="script.js"></script>
 </body>
 </html>
