@@ -272,12 +272,13 @@ html.body.dark {
 }
 
 html.body.dark header,
-html.body.dark .section {
+body.dark .section {
   background: var(--card-dark);
 }
 
 html.body.dark .tool-card,
-html.body.dark .project-card {
+body.dark .project-card {
   background: #262626;
 }
+
 
