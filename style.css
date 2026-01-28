@@ -522,3 +522,7 @@ dark.body .project-card {
 }
 
 
+html {
+  scroll-behavior: smooth;
+}
+
