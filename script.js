@@ -1,19 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("themeToggle");
-  const label = document.getElementById("modeLabel");
+// Theme toggle
+const toggle = document.getElementById("themeToggle");
+const modeLabel = document.getElementById("modeLabel");
 
-  if (!toggle || !label) return;
+function updateThemeUI() {
+  const isDark = document.body.classList.contains("dark");
+  toggle.textContent = isDark ? "☀️" : "🌙";
+  modeLabel.textContent = isDark ? "Dark mode" : "Light mode";
+}
 
-  function updateUI() {
-    const isDark = document.body.classList.contains("dark");
-    toggle.textContent = isDark ? "☀️" : "🌙";
-    label.textContent = isDark ? "Dark mode" : "Light mode";
-  }
-
+if (toggle) {
+  updateThemeUI();
   toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
-    updateUI();
+    updateThemeUI();
   });
+}
 
-  updateUI();
-});
+// Copy email
+function copyEmail() {
+  navigator.clipboard.writeText("alhumaidinamdar@gmail.com");
+  const msg = document.getElementById("copyMsg");
+  msg.classList.add("show");
+  setTimeout(() => msg.classList.remove("show"), 2000);
+}
