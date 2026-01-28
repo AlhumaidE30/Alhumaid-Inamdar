@@ -580,3 +580,9 @@ html {
 .resume-wrapper:hover .tooltip {
   opacity: 1;
 }
+
+/* ===== ACTIVE NAV LINK ===== */
+
+.nav-links a.active::after {
+  width: 100%;
+}
