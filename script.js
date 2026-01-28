@@ -1,29 +1,20 @@
+// Theme toggle
 const toggle = document.getElementById("themeToggle");
 const modeLabel = document.getElementById("modeLabel");
 
-// Load saved theme
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
-}
-
-// Update UI
 function updateThemeUI() {
   const isDark = document.body.classList.contains("dark");
   toggle.textContent = isDark ? "☀️" : "🌙";
   modeLabel.textContent = isDark ? "Dark mode" : "Light mode";
 }
 
-updateThemeUI();
-
-// Toggle theme
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.body.classList.contains("dark") ? "dark" : "light"
-  );
+if (toggle) {
   updateThemeUI();
-});
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    updateThemeUI();
+  });
+}
 
 // Copy email
 function copyEmail() {
